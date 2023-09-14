@@ -5,7 +5,7 @@ authors = ["Michal Hornicky <semtexzv@gmail.com>"]
 repository = "https://github.com/semtexzv/docker_plugin"
 readme = "README.MD"
 
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 license = "MIT"
 
