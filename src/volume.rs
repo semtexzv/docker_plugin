@@ -14,90 +14,89 @@ pub const IMPLEMENTS_VOLUME: &str = "VolumeDriver";
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct CreateRequest<Opts> {
-    name: String,
-    options: Opts,
+    pub name: String,
+    pub options: Opts,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct RemoveRequest {
-    name: String,
+    pub name: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct MountRequest {
-    name: String,
+    pub name: String,
     #[serde(rename = "ID")]
-    id: String,
+    pub id: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct MountResponse {
-    mountpoint: String,
+    pub mountpoint: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct UnmountRequest {
-    name: String,
+    pub name: String,
     #[serde(rename = "ID")]
-    id: String,
+    pub id: String,
 }
 
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct PathRequest {
-    name: String,
+    pub name: String,
 }
 
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct PathResponse {
-    mountpoint: String,
+    pub mountpoint: String,
 }
-
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct GetRequest {
-    name: String,
+    pub name: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct GetResponse<Status> {
-    volume: Option<Volume<Status>>,
+    pub volume: Option<Volume<Status>>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct CapabilitiesResponse {
-    capabilities: Capabilities,
+    pub capabilities: Capabilities,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct Capabilities {
-    scope: String,
+    pub scope: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct ListResponse<Status> {
-    volumes: Vec<Volume<Status>>,
+    pub volumes: Vec<Volume<Status>>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct Volume<Status> {
-    name: String,
-    mountpoint: String,
-    created_at: String,
-    status: Status,
+    pub name: String,
+    pub mountpoint: String,
+    pub created_at: String,
+    pub status: Status,
 }
 
 #[async_trait::async_trait]
